@@ -42,8 +42,8 @@ class Song
     self.find_by_name(name) || self.create_by_name(name)
   end
 
-  def self.alphabetical # why does it want #sort_by when #sort will do?
-    @@all.sort_by { |song| song.sort }
+  def self.alphabetical
+    @@all.sort_by { |song| song.name }
   end
 
   def self.new_from_filename
