@@ -12,13 +12,15 @@ class Song
     self.class.all << self
   end
 
-  def initialize(name)
-      @name = name
-      @@all << self
-    end
+  # def initialize(name)
+  #     @name = name
+  #     @@all << self
+  #   end
 
-  def self.create(name) #creates a new song, saves it to @@all
-    @@all << self.new(name)
+  def self.create
+    song = self.new
+    song.save
+    song
   end
 
   def self.new_by_name
