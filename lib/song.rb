@@ -38,7 +38,8 @@ class Song
     end
   end
 
-  def self.find_or_create_by_name
+  def self.find_or_create_by_name(name)
+    self.find_by_name(name) || self.create_by_name(name)
   end
 
   def self.alphabetical # why does it want #sort_by when #sort will do?
